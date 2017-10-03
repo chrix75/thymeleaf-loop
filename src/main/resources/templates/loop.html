@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List and Form</title>
+</head>
+<body>
+
+<form>
+    <div th:each="i : ${#numbers.sequence(0, 9)}">
+        <input th:if="${i} < ${#lists.size(vals)}" type="text" name="val" th:value="${vals[i]}">
+        <input th:if="${i} >= ${#lists.size(vals)}" type="text" name="val" th:value="NO_VALUE">
+    </div>
+</form>
+
+</body>
+</html>
